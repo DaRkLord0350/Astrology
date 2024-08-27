@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: black;
+    color: whitesmoke;
+    height: 50vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.upperbar {
+    position: fixed;
+    width: 100%;
+    padding: 10px 20px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1000;
+}
+
+.upperbar .name {
+    padding: 10px 12px;
+}
+
+.upperbar .name h1 {
+    color: goldenrod;
+    width: 100%;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.upperbar .list {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+.upperbar .list a {
+    margin: 15px 10px;
+    text-decoration: none;
+    color: azure;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.upperbar .list li a:hover {
+
+    color: goldenrod;
+}
+.upperbar .list li a::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: goldenrod;
+    position: absolute;
+    left :0;
+    bottom: -2px;
+    transform: 0.5s;
+
+}
+.upperbar .list li a:hover::after{
+    width: 100%;
+}
+
+#Services{
+    display: inline-block;
+   
+    margin-top: 120px;
+}
+#Services h1{
+    width: max-content;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+#Services h1:hover{
+    color: goldenrod;
+
+}
+.servicelist{
+    
+    margin-left: 30px;
+    margin-right: 80px;
+    width: fit-content;
+    display: grid;
+    grid-template-columns:100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    
+    /* grid-template-rows: 10; */
+    /* justify-content: space-between;
+    align-items: centre;
+    flex-wrap: wrap; */
+
+}
+
+.service .servicelist div{
+   position: relative;
+    /* padding: 10px;; */
+    
+
+}
+
+
+.service2{
+    padding: 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    background-color: goldenrod;
+}
+.service2 img{
+    height: 80px;
+    width: 80px;
+    margin: 42px;
+
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+.service2:hover img{
+      transform: scale(1.2);
+}
+.service2 h3{
+    display: none;
+    text-align: center;
+    
+    transition: transform 0.5s ease-in-out;
+    
+}
+.service2:hover h3{
+    display: block;
+    transform: scale(1.2);
+}
+.service2:hover{
+    background-color: white;
+    color: goldenrod;
+}
+.service1{
+    padding: 10px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end:  2;
+    background-color: gold 
+}
+.service1 img{
+    margin: 15px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+.service1 h3{
+    display: none;
+    text-align: center;
+
+    transition: transform 0.5s ease-in-out;
+}
+.service1:hover img{
+    transform: scale(1.2);
+}
+.service1:hover h3{
+    display: block;
+}
+.service1:hover{
+    background-color: white;
+    color: goldenrod;
+}
+
+.service3{
+    padding: 20px;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end:  6;
+    background-color: #ffd500;
+}
+.service3 img{
+    
+    margin: 20px;
+    margin-top: 40px;
+    margin-left: 25px;
+    height: 120px;
+    width: 120px;
+    transition: tranform 0.5 ;
+
+}
+.service3 h2{
+    margin-top: 40px;
+    display: none;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.service3:hover img{
+    transform: scale(1.2) ;
+}
+.service3:hover h2{
+    display: block;
+    transform: scale(1.2);
+}
+.service3:hover{
+    background-color: white;
+    color: goldenrod;
+}
+
+.service4{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end:  4;
+    background-color: rgb(158, 114, 5);
+}
+.service4 img{
+    margin-left: 10px;
+   height: 100px;
+   width: 100px;
+   transition: transform 0.3s;
+}
+.service4  h2{
+    margin-top: 20px ;
+    display: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+   
+}
+.service4:hover{
+    background-color: white;
+    color: goldenrod;
+
+}
+.service4:hover  img{
+    transform: scale(1.2);
+}
+.service4:hover h2{
+    display: block;
+    transform: scale(1.2);
+}
+.service5{
+   padding: 5px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end:  2;
+    background-color: rgb(237, 206, 127);
+}
+.service5 img{
+    margin: 5px 5px 5px 20px;
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+.service5 h3{
+    display: none;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    cursor:pointer;
+}
+.service5:hover{
+    background-color: white;
+    color: goldenrod;
+}
+.service5:hover img{
+    transform: scale(1.2);
+}
+.service5:hover h3{
+    display: block;
+    transform: scale(1.2);
+
+}
+
+.whatsapp-button {
+    position: fixed; /* Keeps the button in a fixed position on the screen */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: white; /* WhatsApp green color */
+    padding: 10px; /* Space around the button */
+    border-radius: 50%; /* Makes the button circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+    z-index: 1000; /* Ensures the button stays on top of other content */
+}
+.whatsapp-button img {
+    width: 40px; /* Size of the WhatsApp icon */
+    height: 40px; /* Size of the WhatsApp icon */
+    display: block; /* Ensures the image does not have any inline space */
+}
+
+
+
+
+/* .services .servicelist div,.service2,.service3,.service4,.service5{
+    background-color: gold;
+} */
+
+
+/* .credit{
+
+    bottom: 0;
+    position: fixed;
+} */
+
+/* footer {
+    bottom: 0;
+    background-color: #333; 
+    color: whitesmoke; 
+    text-align: center; 
+    padding: 10px 0; 
+    position: relative; 
+    width: 100%; 
+    bottom: 0; 
+} */

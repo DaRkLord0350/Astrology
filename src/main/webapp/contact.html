@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Css/contactStylesheet.css">
+    <title>ContactMe</title>
+    <script>
+        // Disable right-click on the whole document
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Prevent the default right-click menu
+        });
+    </script>
+</head>
+<body>
+    <nav class="upperbar">
+        <div class="name">
+            <h1>Acharya Pathikrit</h1>
+        </div>
+        <ul class="list">
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="form-box">
+            <form id="form" action="Registered" method="post" autocomplete="off">
+                <h1>Contact Us</h1>
+                <div class="name">
+                    <span><i class='bx bxs-user'></i></span>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Fullname*" required>
+                </div>
+                <div class="adress">
+                    <span><i class='bx bx-map-pin' ></i></span>
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" id="address" placeholder="Address*" required>
+                </div>
+                <div class="city">
+                    <span><i class='bx bx-map' ></i></span>
+                    <label for="city">City:</label>
+                    <input type="text" name="city" id="city" placeholder="City*" required>
+                </div>
+                
+                <div class="pho" id="pho">
+                    <span><i class='bx bxs-mobile' ></i></span>
+                    <label for="phone">Mobile Number:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Mobile Number*" pattern="^\d{10}$"
+                    title="Please enter a valid phone number" required>
+                    <span class="error-pho" id="error-pho">Please enter a valid phone number.</span>
+                </div>
+                <div class="wa" id="wa">
+                    <span><i class='bx bxl-whatsapp' ></i></span>
+                    <label for="whatsapp">WhatsApp Number:</label>
+                    <input type="tel" name="whatsapp" id="whatsapp" placeholder="WhatsApp Number*" pattern="^\d{10}$" title="please enter valid Whatsapp number" required>
+                    <span class="error-wa" id="error-wa">Enter valid Whatsapp number</span>
+                </div>
+                <div class="msg">
+                    <span><i class='bx bx-message-dots' ></i></span>
+                    <label for="msg">Message:</label>
+                    <input type="text" name="message" id="msg" placeholder="You can Write a Message" >
+                </div>
+                <div class="check">
+                    <span><i class='bx bx-male-female'></i></span>
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender" value="male">
+    
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender" value="female">
+    
+                    <label for="other">Other</label>
+                    <input type="radio" id="other" name="gender" value="other">
+    
+                </div>
+                <div class="drop">
+                    <span></span>
+                    <label for="country">Country:</label>
+                    <select name="country" id="country" required>
+                        <option value="">Country*</option>
+                        <option value="India">India</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="submit">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        
+    </main>
+    <a href="https://wa.me/918910071150" class="whatsapp-button" target="_blank" title="Contact me on WhatsApp">
+        <img src="Css/whatsapp-square-logo-24.png" alt="WhatsApp">
+    </a>
+
+    <script src="JS/form.js"></script>
+
+
+</body>
+</html>
