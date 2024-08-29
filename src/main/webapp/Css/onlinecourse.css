@@ -18,8 +18,11 @@ body {
     flex-direction: column;
 }
 
+
+
+
 .upperbar {
-    position: fixed;
+    position: relative;
     width: 100%;
     padding: 10px 20px;
     top: 0;
@@ -36,19 +39,39 @@ body {
 }
 
 .upperbar .name h1 {
-    color:white;
+    color: goldenrod;
     width: 100%;
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.upperbar .list {
-    display: inline-flex;
-    list-style-type: none;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
 }
 
-.upperbar .list a {
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    margin-right: 20px;
+}
+
+.list a {
     margin: 15px 10px;
     text-decoration: none;
     color: azure;
@@ -56,8 +79,8 @@ body {
     cursor: pointer;
     position: relative;
 }
-
 .upperbar .list li a:hover {
+
     color: goldenrod;
 }
 .upperbar .list li a::after{
@@ -74,6 +97,72 @@ body {
 .upperbar .list li a:hover::after{
     width: 100%;
 }
+
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
+}
+
+@media (max-width: 1080px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .list {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .list li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .list a {
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .list.active {
+        display: flex;
+    }
+
+    .close-btn.active {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 main{
     margin-top: 230px;
@@ -378,5 +467,69 @@ select:hover {
      }
     .form{
         width: 100%;
+    }
+}
+
+
+
+
+
+
+
+.txt {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.list {
+    padding-left: 20px;
+}
+
+.list h3 {
+    font-size: 1.1em;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .txt {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    .list h3 {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 0.9em;
+    }
+
+    .list h3 {
+        font-size: 0.8em;
     }
 }

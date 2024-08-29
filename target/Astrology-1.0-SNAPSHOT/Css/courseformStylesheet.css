@@ -19,7 +19,7 @@ body {
 }
 
 .upperbar {
-    position: fixed;
+    position: relative;
     width: 100%;
     padding: 10px 20px;
     top: 0;
@@ -43,12 +43,32 @@ body {
     cursor: pointer;
 }
 
-.upperbar .list {
-    display: inline-flex;
-    list-style-type: none;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
 }
 
-.upperbar .list a {
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    margin-right: 20px;
+}
+
+.list a {
     margin: 15px 10px;
     text-decoration: none;
     color: azure;
@@ -56,7 +76,6 @@ body {
     cursor: pointer;
     position: relative;
 }
-
 .upperbar .list li a:hover {
 
     color: goldenrod;
@@ -75,6 +94,58 @@ body {
 .upperbar .list li a:hover::after{
     width: 100%;
 }
+
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
+}
+
+@media (max-width: 1080px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .list {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .list li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .list a {
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .list.active {
+        display: flex;
+    }
+
+    .close-btn.active {
+        display: block;
+    }
+}
+
+
+
 main{
     position: absolute;
     left: 50%;
@@ -89,95 +160,53 @@ main{
     border-radius: 10px;
     margin-top: 20px;
 }
-main .container{
+
+.container {
+    max-width: 1200px;
+    margin: 150px auto;
+    padding: 20px;
+    text-align: center;
     backdrop-filter: blur(20px);
     position: absolute;
-    top: 0;
+    /* top: 0;
     left: 0;
    width: 58%;
    height: 100%;
-   
+   max-width: 1200px;
+    margin: 0 auto; */
+    padding: 20px;
+    /* text-align: center; */
+}
+
+.logo {
     
-}
-.form-box{
-    position: absolute;
-    top: 0;
-    right:  0;
-   width: 42%;
-   height: 100%;
-   
-}
-.container .logo{
     margin-left: 100px;
     margin-top: 30px;
     color: goldenrod;
-    font-size: 30px;
+    font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1.4;
 }
-.container .txt h2{
-    margin-left: 200px;
-    margin-top: 5px;
-    color: goldenrod;
-    font-size: 20px;
-}
-.container .txt h3{
-    font-size: 15px;
-    margin-top: 5px;
-    margin-left: 50px;
-}
-.form-box .form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    backdrop-filter: blur(5px);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-.form-box .form form{
-    height: 75%;
-   
-}
-.form-box .form form h1{
-    text-align: center;
-    color: gold;
-    cursor: pointer;
-}
-.form-box .form form .input-box{
-    width: 340px;
-    height: 50px;
-    margin-left: 30px;
-    border-bottom: 2px transparent goldenrod;
-}
-.input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none
-}
-.input-box-country{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.input-submit{
-    margin-top: 15px;
-    margin-bottom: 0;
-}
-@media  screen and (max-width:600px) {
-    main{
-        position: relative;
-        background-image: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2em;
     }
-    .form-box{
-        position: relative;
-        
+
+    .container {
+        padding: 15px;
+        margin-top: 150px;
     }
 }
 
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
 
+    .container {
+        padding: 10px;
+    }
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,96 +8,127 @@
   <link rel="stylesheet" href="Css/AboutStylesheet.css">
   <script>
     // Disable right-click on the whole document
-    document.addEventListener('contextmenu', function(event) {
-      event.preventDefault(); // Prevent the default right-click menu
-    });
+    // document.addEventListener('contextmenu', function(event) {
+    //   event.preventDefault(); // Prevent the default right-click menu
+    // });
   </script>
 </head>
+
 <body>
-<nav class="upperbar">
-  <div class="name">
-    <h1>Acharya Pathikrit</h1>
-  </div>
-  <ul class="list">
-    <li><a href="home">Home</a></li>
-    <li><a href="contact">Contact</a></li>
-    <li><a href="https://wa.me/918910071150" target="_blank">Appointment</a></li>
-  </ul>
+  <nav class="upperbar">
+    <div class="name">
+        <h1>Acharya Pathikrit</h1>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul class="list">
+        <li><a href="home">Home</a></li>
+        <li><a href="#Services">Services</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="https://wa.me/918910071150" target="_blank">Appointment</a></li>
+    </ul>
+    <div class="close-btn" onclick="toggleMenu()">&#10005;</div>
 </nav>
-<div class="about">
-  <h1>About</h1>
+  <div class="about">
+    <h1>About</h1>
 
 
-  <div class="container-2">
-    <div class="content">
-      <div class="image-2">
-        <img src="Css/lahirimahashay.jpg" >
-      </div>
-      <div class="about-text">
-        <p>The mind is the only real obstacle to spiritual progress. Purify it, and all obstacles will vanish.</p>
-        <p>--ShyamaCharan Lahiri</p>
-        <p>With profound respect, we honor Shyamacharan Lahiri, also known as Lahiri Mahasaya. His teachings on Kriya Yoga and spiritual wisdom have guided countless individuals towards self-realization and inner peace. His life and wisdom continue to inspire and uplift us, embodying the essence of divine grace and compassion. We salute his enduring legacy and strive to follow his path of enlightenment and purity.</p>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="container-2">
-    <div class="content">
-      <div class="image-2">
-        <img src="Css/yogacharya-dr-ashoke-kumar-chatterjee_3.webp" >
-      </div>
-      <div class="about-text">
-        <h3>Respected Mahamahopadhyaya Yogacharya Dr. Ashoke Kumar Chatterjee,</h3>
-        <br>
-        <p>With profound reverence and gratitude, I bow to you. Your teachings and guidance have illuminated my path and enriched my understanding of yoga and spirituality. As my esteemed guru, your wisdom and insight continue to inspire and uplift me, guiding me toward greater self-awareness and inner peace.
-
-          I am deeply grateful for your support and blessings, which have been instrumental in my journey. May your teachings continue to inspire and transform many others, as they have done for me.
-
-          With deepest respect and devotion,</p>
-
-         <p> Acharya Pathikrit.</p>
+    <div class="container-2">
+      <div class="content">
+        <div class="image-2">
+          <img src="Css/lahirimahashay.jpg">
+        </div>
+        <div class="about-text">
+          <p>The mind is the only real obstacle to spiritual progress. Purify it, and all obstacles will vanish.</p>
+          <p>--ShyamaCharan Lahiri</p>
+          <p>With profound respect, we honor Shyamacharan Lahiri, also known as Lahiri Mahasaya. His teachings on Kriya
+            Yoga and spiritual wisdom have guided countless individuals towards self-realization and inner peace. His
+            life and wisdom continue to inspire and uplift us, embodying the essence of divine grace and compassion. We
+            salute his enduring legacy and strive to follow his path of enlightenment and purity.</p>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="container-1">
-    <div class="content">
-      <div class="image-1">
-        <img src="Css/whitedress.jpeg"  >
-      </div>
-      <div class="about-text">
-        <h2>About Acharya Pathikrit</h2>
-        <p>Acharya Pathikrit stands as a distinguished figure in the realms of astrology and spiritual guidance. With over 15 years of experience, he has made significant contributions to the field, earning 10 gold medals in recognition of his expertise and excellence. As a revered astrologer and spiritual guru, he has guided many through his profound insights and teachings.
-
-          In addition to his role as an esteemed astrologer, Acharya Pathikrit is a dedicated astrology teacher, imparting his deep knowledge and wisdom to students. His ability to blend ancient astrological traditions with modern understanding makes his teachings invaluable to those seeking clarity and direction.
-
-          His dedication to his craft and his commitment to his students reflect his unwavering passion for astrology and spirituality. Acharya Pathikrit’s work continues to inspire and uplift, making him a respected and admired figure in his field.</p>
-      </div>
-    </div>
-  </div>
 
 
 
+    <div class="container-2">
+      <div class="content">
+        <div class="image-2">
+          <img src="Css/yogacharya-dr-ashoke-kumar-chatterjee_3.webp">
+        </div>
+        <div class="about-text">
+          <h3>Respected Mahamahopadhyaya Yogacharya Dr. Ashoke Kumar Chatterjee,</h3>
+          <br>
+          <p>With profound reverence and gratitude, I bow to you. Your teachings and guidance have illuminated my path
+            and enriched my understanding of yoga and spirituality. As my esteemed guru, your wisdom and insight
+            continue to inspire and uplift me, guiding me toward greater self-awareness and inner peace.
 
-  <div class="container-2">
-    <div class="content">
-      <div class="image-2">
-        <img src="Css/frame.jpeg" >
-      </div>
-      <div class="about-text">
-        <p>His expertise encompasses a wide range of services designed to offer profound insights and solutions. He provides Vastu Consultation, ensuring that spaces are aligned with positive energy. His skills in Numerology offer personalized guidance based on numerical analysis. Through Birth Chart Prediction, Janam Kundli, and Kundali Matching, he provides in-depth understanding of individual life paths and relationship compatibility. Additionally, his Palm Reading services reveal personal traits and potential, while his Love Problem Resolution offers support for resolving relationship issues. For those seeking accessible advice, his Phone Consultation service provides valuable insights from the comfort of your home. Acharya Pathikrit’s comprehensive approach and deep knowledge continue to inspire and assist individuals on their journey to personal and spiritual growth.
+            I am deeply grateful for your support and blessings, which have been instrumental in my journey. May your
+            teachings continue to inspire and transform many others, as they have done for me.
 
-        </p>
+            With deepest respect and devotion,</p>
+
+          <p> Acharya Pathikrit.</p>
+        </div>
       </div>
     </div>
+
+    <div class="container-1">
+      <div class="content">
+        <div class="image-1">
+          <img src="Css/whitedress.jpeg">
+        </div>
+        <div class="about-text">
+          <h2>About Acharya Pathikrit</h2>
+          <p>Acharya Pathikrit stands as a distinguished figure in the realms of astrology and spiritual guidance. With
+            over 15 years of experience, he has made significant contributions to the field, earning 10 gold medals in
+            recognition of his expertise and excellence. As a revered astrologer and spiritual guru, he has guided many
+            through his profound insights and teachings.
+
+            In addition to his role as an esteemed astrologer, Acharya Pathikrit is a dedicated astrology teacher,
+            imparting his deep knowledge and wisdom to students. His ability to blend ancient astrological traditions
+            with modern understanding makes his teachings invaluable to those seeking clarity and direction.
+
+            His dedication to his craft and his commitment to his students reflect his unwavering passion for astrology
+            and spirituality. Acharya Pathikrit’s work continues to inspire and uplift, making him a respected and
+            admired figure in his field.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="container-2">
+      <div class="content">
+        <div class="image-2">
+          <img src="Css/frame.jpeg">
+        </div>
+        <div class="about-text">
+          <p>His expertise encompasses a wide range of services designed to offer profound insights and solutions. He
+            provides Vastu Consultation, ensuring that spaces are aligned with positive energy. His skills in Numerology
+            offer personalized guidance based on numerical analysis. Through Birth Chart Prediction, Janam Kundli, and
+            Kundali Matching, he provides in-depth understanding of individual life paths and relationship
+            compatibility. Additionally, his Palm Reading services reveal personal traits and potential, while his Love
+            Problem Resolution offers support for resolving relationship issues. For those seeking accessible advice,
+            his Phone Consultation service provides valuable insights from the comfort of your home. Acharya Pathikrit’s
+            comprehensive approach and deep knowledge continue to inspire and assist individuals on their journey to
+            personal and spiritual growth.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-</div>
-
-<a href="https://wa.me/918910071150" class="whatsapp-button" target="_blank" title="Contact me on WhatsApp">
-  <img src="Css/whatsapp-square-logo-24.png" alt="WhatsApp">
-</a>
+  <a href="https://wa.me/918910071150" class="whatsapp-button" target="_blank" title="Contact me on WhatsApp">
+    <img src="Css/whatsapp-square-logo-24.png" alt="WhatsApp">
+  </a>
 </body>
+
 </html>

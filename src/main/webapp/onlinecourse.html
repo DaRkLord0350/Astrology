@@ -8,9 +8,15 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script>
         // Disable right-click on the whole document
-        document.addEventListener('contextmenu', function(event) {
-            event.preventDefault(); // Prevent the default right-click menu
-        });
+        // document.addEventListener('contextmenu', function(event) {
+        //     event.preventDefault(); // Prevent the default right-click menu
+        // });
+        function toggleMenu() {
+            const menu = document.querySelector('.list');
+            const closeBtn = document.querySelector('.close-btn');
+            menu.classList.toggle('active');
+            closeBtn.classList.toggle('active');
+        }
     </script>
 </head>
 <body>
@@ -18,12 +24,19 @@
         <div class="name">
             <h1>Acharya Pathikrit</h1>
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
         <ul class="list">
             <li><a href="home">Home</a></li>
+            <li><a href="#Services">Services</a></li>
             <li><a href="about">About</a></li>
             <li><a href="contact">Contact</a></li>
             <li><a href="https://wa.me/918910071150" target="_blank">Appointment</a></li>
         </ul>
+        <div class="close-btn" onclick="toggleMenu()">&#10005;</div>
     </nav>
     <main>
         <article>

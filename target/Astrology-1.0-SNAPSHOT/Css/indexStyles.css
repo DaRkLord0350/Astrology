@@ -17,9 +17,8 @@ body {
     display:flex;
     flex-direction: column;
 }
-
 .upperbar {
-    position: fixed;
+    position: relative;
     width: 100%;
     padding: 10px 20px;
     top: 0;
@@ -43,12 +42,32 @@ body {
     cursor: pointer;
 }
 
-.upperbar .list {
-    display: inline-flex;
-    list-style-type: none;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
 }
 
-.upperbar .list a {
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    margin-right: 20px;
+}
+
+.list a {
     margin: 15px 10px;
     text-decoration: none;
     color: azure;
@@ -56,7 +75,6 @@ body {
     cursor: pointer;
     position: relative;
 }
-
 .upperbar .list li a:hover {
 
     color: goldenrod;
@@ -76,259 +94,183 @@ body {
     width: 100%;
 }
 
-#Services{
-    display: inline-block;
-   
-    margin-top: 120px;
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
 }
-#Services h1{
+
+@media (max-width: 1080px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .list {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .list li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .list a {
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .list.active {
+        display: flex;
+    }
+
+    .close-btn.active {
+        display: block;
+    }
+}
+
+
+
+#Services {
+    display: inline-block;
+    margin-top: 120px;
+    width: 100%;
+}
+
+#Services h1 {
     width: max-content;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 12px;
     cursor: pointer;
+    text-align: center;
 }
-#Services h1:hover{
-    color: goldenrod;
 
+#Services h1:hover {
+    color: goldenrod;
 }
-.servicelist{
-    
-    margin-left: 30px;
-    margin-right: 80px;
-    width: fit-content;
+
+.servicelist {
+    margin: 0 auto;
+    width: 90%;
     display: grid;
-    grid-template-columns:100px 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    
-    /* grid-template-rows: 10; */
-    /* justify-content: space-between;
-    align-items: centre;
-    flex-wrap: wrap; */
-
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-.service .servicelist div{
-   position: relative;
-    /* padding: 10px;; */
-    
-
-}
-
-
-.service2{
-    padding: 10px;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 4;
-
-    background-color: goldenrod;
-}
-.service2 img{
-    height: 80px;
-    width: 80px;
-    margin: 42px;
-
-    margin-bottom: 30px;
-    transition: transform 0.3s;
-}
-.service2:hover img{
-      transform: scale(1.2);
-}
-.service2 h3{
-    display: none;
-    text-align: center;
-    
-    transition: transform 0.5s ease-in-out;
-    
-}
-.service2:hover h3{
-    display: block;
-    transform: scale(1.2);
-}
-.service2:hover{
-    background-color: white;
-    color: goldenrod;
-}
-.service1{
-    padding: 10px;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end:  2;
-    background-color: gold 
-}
-.service1 img{
-    margin: 15px;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    height: 40px;
-    width: 40px;
-    transition: transform 0.3s;
-}
-.service1 h3{
-    display: none;
-    text-align: center;
-
-    transition: transform 0.5s ease-in-out;
-}
-.service1:hover img{
-    transform: scale(1.2);
-}
-.service1:hover h3{
-    display: block;
-}
-.service1:hover{
-    background-color: white;
-    color: goldenrod;
-}
-
-.service3{
-    padding: 20px;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    grid-column-start: 4;
-    grid-column-end:  6;
+.service .servicelist div {
+    position: relative;
     background-color: #ffd500;
-}
-.service3 img{
-    
-    margin: 20px;
-    margin-top: 40px;
-    margin-left: 25px;
-    height: 120px;
-    width: 120px;
-    transition: tranform 0.5 ;
-
-}
-.service3 h2{
-    margin-top: 40px;
-    display: none;
+    padding: 10px;
+    border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
 }
-.service3:hover img{
-    transform: scale(1.2) ;
+.servicelist div:hover{
+    background-color: #ffffff;
 }
-.service3:hover h2{
+
+.service2, .service1, .service3, .service4, .service5 {
+    background-color: gold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service2 img, .service1 img, .service3 img, .service4 img, .service5 img {
+    margin: 15px auto;
     display: block;
-    transform: scale(1.2);
+    max-width: 100%;
+    transition: transform 0.3s ease;
 }
-.service3:hover{
+
+.service2 h3, .service1 h3, .service3 h2, .service4 h2, .service5 h3 {
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+.service2:hover, .service1:hover, .service3:hover, .service4:hover, .service5:hover {
     background-color: white;
     color: goldenrod;
+    transform: translateY(-5px);
 }
 
-.service4{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0;
-    padding-bottom: 0;
-    grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end:  4;
-    background-color: rgb(158, 114, 5);
-}
-.service4 img{
-    margin-left: 10px;
-   height: 100px;
-   width: 100px;
-   transition: transform 0.3s;
-}
-.service4  h2{
-    margin-top: 20px ;
-    display: none;
-    cursor: pointer;
-    text-align: center;
-    transition: transform 0.3s;
-   
-}
-.service4:hover{
-    background-color: white;
-    color: goldenrod;
-
-}
-.service4:hover  img{
+.service2:hover img, .service1:hover img, .service3:hover img, .service4:hover img, .service5:hover img {
     transform: scale(1.2);
 }
-.service4:hover h2{
+
+.service2:hover h3, .service1:hover h3, .service3:hover h2, .service4:hover h2, .service5:hover h3 {
     display: block;
     transform: scale(1.2);
-}
-.service5{
-   padding: 5px;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end:  2;
-    background-color: rgb(237, 206, 127);
-}
-.service5 img{
-    margin: 5px 5px 5px 20px;
-    height: 40px;
-    width: 40px;
-    transition: transform 0.3s;
-}
-.service5 h3{
-    display: none;
-    text-align: center;
-    transition: transform 0.5s ease-in-out;
-    cursor:pointer;
-}
-.service5:hover{
-    background-color: white;
-    color: goldenrod;
-}
-.service5:hover img{
-    transform: scale(1.2);
-}
-.service5:hover h3{
-    display: block;
-    transform: scale(1.2);
-
 }
 
 .whatsapp-button {
-    position: fixed; /* Keeps the button in a fixed position on the screen */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    background-color: white; /* WhatsApp green color */
-    padding: 10px; /* Space around the button */
-    border-radius: 50%; /* Makes the button circular */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
-    z-index: 1000; /* Ensures the button stays on top of other content */
-}
-.whatsapp-button img {
-    width: 40px; /* Size of the WhatsApp icon */
-    height: 40px; /* Size of the WhatsApp icon */
-    display: block; /* Ensures the image does not have any inline space */
-}
-
-
-
-
-/* .services .servicelist div,.service2,.service3,.service4,.service5{
-    background-color: gold;
-} */
-
-
-/* .credit{
-
-    bottom: 0;
     position: fixed;
-} */
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
 
-/* footer {
-    bottom: 0;
-    background-color: #333; 
-    color: whitesmoke; 
-    text-align: center; 
-    padding: 10px 0; 
-    position: relative; 
-    width: 100%; 
-    bottom: 0; 
-} */
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .servicelist {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+    }
+
+    .service2, .service1, .service3, .service4, .service5 {
+        padding: 15px;
+    }
+
+    .service2 img, .service1 img, .service3 img, .service4 img, .service5 img {
+        max-width: 80%;
+    }
+
+    .service2 h3, .service1 h3, .service3 h2, .service4 h2, .service5 h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicelist {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service2, .service1, .service3, .service4, .service5 {
+        padding: 10px;
+    }
+
+    .service2 img, .service1 img, .service3 img, .service4 img, .service5 img {
+        max-width: 70%;
+    }
+
+    .service2 h3, .service1 h3, .service3 h2, .service4 h2, .service5 h3 {
+        font-size: 14px;
+    }
+}
+
+
+

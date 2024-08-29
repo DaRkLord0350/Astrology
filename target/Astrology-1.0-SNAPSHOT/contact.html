@@ -11,6 +11,12 @@
         document.addEventListener('contextmenu', function(event) {
             event.preventDefault(); // Prevent the default right-click menu
         });
+        function toggleMenu() {
+            const menu = document.querySelector('.list');
+            const closeBtn = document.querySelector('.close-btn');
+            menu.classList.toggle('active');
+            closeBtn.classList.toggle('active');
+        }
     </script>
 </head>
 <body>
@@ -18,10 +24,16 @@
         <div class="name">
             <h1>Acharya Pathikrit</h1>
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
         <ul class="list">
             <li><a href="home">Home</a></li>
             <li><a href="about">About</a></li>
         </ul>
+        <div class="close-btn" onclick="toggleMenu()">&#10005;</div>
     </nav>
     <main>
         <div class="form-box">
